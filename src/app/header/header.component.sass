@@ -1,0 +1,40 @@
+.header
+    background-color: #010B13
+    display: flex
+    justify-content: center
+    padding: 20px
+    border-bottom: 1px solid #FFFDFA
+    position: sticky
+    top: 0
+    left: 0
+    box-shadow: 0px 0px 40px #010B13
+
+.text
+    position: relative
+    font-weight: bold
+    color: #010B13
+    margin: 0
+    padding: 0
+    -webkit-text-fill-color: #010B13 /* Will override color (regardless of order) */
+    -webkit-text-stroke: 0.1px #FFFDFA
+    font: 900 70px 'DM Serif Display', sans-serif
+    display: inline-block
+    line-height: 0.75em
+    height: 0.75em
+    
+
+
+.text::before
+    content: attr(data-text)
+    position: absolute
+    z-index: 1
+    color: #ffffff
+    pointer-events: none
+    width: 0
+    overflow: hidden
+    transition: 1s ease-out all
+    white-space: nowrap
+    -webkit-text-fill-color: #FFFDFA
+
+.text:hover::before
+    width: 100%

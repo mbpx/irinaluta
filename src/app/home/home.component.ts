@@ -16,7 +16,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   private rotationSpeedX = 0.0;
   private rotationSpeedY = 0.0;
   private size = 2;
-  private cameraZ = 200;
+  
+  private cameraZ = 125;
   private fieldOfView = 1;
   private nearClippingPane = 20;
   private farClippingPane = 1000;
@@ -39,37 +40,46 @@ export class HomeComponent implements OnInit, AfterViewInit {
     return this.canvasRef.nativeElement;
   }
 
-  createScene() {
+  loadScene() {
     this.loadGLTF();
-    const background = new THREE.Color(0xffffff);
+    const background = new THREE.Color(0x010B13);
     this.scene.background = background;
   }
 
-  centerScene() {
+  createScene() {
     this.scene.scale.set(this.size, this.size, this.size);
     const box3 = new THREE.Box3().setFromObject(this.object);
     const center = new THREE.Vector3();
     box3.getCenter(center);
     this.center = center;
-    // center scene according to this.center
-    this.scene.position.sub(this.center);
-
-    // center camera according to this.center
-    this.camera.position.copy(this.center);
-    this.camera.position.z += 125;
-    this.camera.lookAt(this.center);
+    this.scene.position.sub(this.center);   // center scene according to this.center
+    
+    this.createCamera();
     this.createLight();
   }
 
   createLight() {
-    const light = new THREE.RectAreaLight(0xffffff, 2, 8, 8); // soft white light
+    this.light = new THREE.RectAreaLight(0xffffff, 2.5, 8, 8); // soft white light
     // Center light according to this.center
-    light.position.copy(this.center);
-    light.position.z += 4.5;
-    light.position.y -= 1.5;
-    light.lookAt(this.center);
-    this.light = light;
-    this.scene.add(light);
+    this.light.position.copy(this.center);
+    this.light.position.z += 4.5;
+    this.light.position.y -= 1.5;
+    this.light.lookAt(this.center);
+    this.light = this.light;
+    this.scene.add(this.light);
+  }
+
+  createCamera() {
+    this.camera = new THREE.PerspectiveCamera(
+      this.fieldOfView,
+      this.aspectRatio,
+      this.nearClippingPane,
+      this.farClippingPane
+    );
+
+    this.camera.position.copy(this.center);   // center camera according to this.center
+    this.camera.position.z += this.cameraZ;
+    this.camera.lookAt(this.center);
   }
 
   loadGLTF() {
@@ -88,33 +98,24 @@ export class HomeComponent implements OnInit, AfterViewInit {
         gltf.asset; // Object
 
         this.createMeshFromGLTF(gltf);
-        this.centerScene();
-
+        this.createScene();
       },
       // called while loading is progressing
       (xhr) => {
-
         console.log((xhr.loaded / xhr.total * 100) + '% loaded');
-
       },
       // called when loading has errors
       (error) => {
-
         console.log('An error happened');
         console.log(error);
-
       }
     );
   }
 
-  createCamera() {
-    this.camera = new THREE.PerspectiveCamera(
-      this.fieldOfView,
-      this.aspectRatio,
-      this.nearClippingPane,
-      this.farClippingPane
-    );
-    this.camera.position.z = this.cameraZ;
+  private createMeshFromGLTF(gltf: any) {
+    const mesh = gltf.scene.children[0];
+    this.object = mesh;
+    this.renderer.outputColorSpace = THREE.SRGBColorSpace;
   }
 
   private get aspectRatio(): number {
@@ -128,23 +129,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   mouseover() {
     this.rotationSpeedY += 0.02;
-    this.camera.position.z -= 20; 
+    this.camera.position.z -= 50; 
   }
 
   mouseout() {
     this.rotationSpeedY -= 0.02;
-    this.camera.position.z += 20; 
-  }
-
-  private createMeshFromGLTF(gltf: any) {
-    const mesh = gltf.scene.children[0];
-    this.object = mesh;
-    this.renderer.outputColorSpace = THREE.SRGBColorSpace;
-  }
-
-  private setObjectPosition() {
-    this.object.scale.set(10, 10, 10);
-    this.object.position.set(0,-17.7,0);
+    this.camera.position.z += 50; 
   }
 
   private startRenderingLoop() {
@@ -170,9 +160,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.createCamera();
-    this.createScene();
+    this.loadScene();
     this.startRenderingLoop();
   }
-
 }
