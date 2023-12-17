@@ -17,5 +17,12 @@
     "learnMoreButton": "Scopri di più sul mio lavoro e scopri come possiamo creare insieme!",
     "contactButton": "Contatta Ora",
     "footer": "Hai un'idea in testa? Possiamo lavorare insieme!",
-    "footer-button": "Parliamo!"
+    "footer-button": "Parliamo!",
+    "copyright": "Tutti i diritti riservati.",
+    "contact": {
+        "name": "Il tuo nome",
+        "email": "La tua email",
+        "message": "Il tuo messaggio",
+        "send": "Invia messaggio"
+    }
 }

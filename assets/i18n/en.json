@@ -17,5 +17,12 @@
     "learnMoreButton": "Learn more about my work and discover how we can create together!",
     "contactButton": "Contact Now",
     "footer": "Is there an idea in your head?   We can work together!",
-    "footer-button": "Let's chat!"
+    "footer-button": "Let's chat!",
+    "copyright": "All rights reserved.",
+    "contact": {
+        "name": "Your name",
+        "email": "Your email",
+        "message": "Your message",
+        "send": "Send Message"
+    }
 }

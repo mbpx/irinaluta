@@ -17,5 +17,12 @@
     "learnMoreButton": "Află mai multe despre munca mea și descoperă cum putem crea împreună!",
     "contactButton": "Contactează acum",
     "footer": "Ai o idee în minte? Putem lucra împreună!",
-    "footer-button": "Să discutăm!"
+    "footer-button": "Să discutăm!",
+    "copyright": "Toate drepturile rezervate.",
+    "contact": {
+        "name": "Numele tău",
+        "email": "Adresa ta de email",
+        "message": "Mesajul tău",
+        "send": "Trimite mesaj"
+    }
 }
