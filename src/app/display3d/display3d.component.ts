@@ -27,6 +27,8 @@ export class Display3D implements OnInit, AfterViewInit {
   private nearClippingPane = 20;
   private farClippingPane = 1000;
 
+  @Input('rotation')
+  initialRotation = 0;
   private object!: THREE.Mesh;
   private camera!: THREE.PerspectiveCamera;
   private scene!: THREE.Scene;
@@ -59,7 +61,8 @@ export class Display3D implements OnInit, AfterViewInit {
     box3.getCenter(center);
     this.center = center;
     this.scene.position.sub(this.center);   // center scene according to this.center
-    
+    this.object.rotation.y = this.initialRotation;
+
     this.createCamera();
     this.createLight();
   }
