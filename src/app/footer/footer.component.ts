@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.sass']
 })
 export class FooterComponent {
-
+  scroll(id: string) {
+    let el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({behavior: 'smooth'});
+    }
+  }
 }

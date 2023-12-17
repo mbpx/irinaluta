@@ -1,6 +1,6 @@
 <div class="grid grid-rows-3 justify-center align-center main">
     <div class="element grid grid-cols-3">
-        <app-display3d resource="giacca"></app-display3d>
+        <app-display3d resource="giacca" [zoom]="115"></app-display3d>
         <div class="col-span-2 text">
             <div class="title">{{ 'title' | translate }}</div>
             {{ 'welcomeMessage' | translate }}
@@ -11,7 +11,7 @@
             <div class="title">{{ 'dedicationAndApproachability.heading' | translate }}</div>
             {{ 'dedicationAndApproachability.content' | translate }}
         </div>
-        <app-display3d resource="cappellino" [zoom]="40"></app-display3d>
+        <app-display3d resource="cappellino" [zoom]="38"></app-display3d>
     </div>
     <div class="element grid grid-cols-3">
         <app-display3d resource="giacca" [zoom]="50"></app-display3d>
@@ -45,12 +45,13 @@
         <div class="text" style="text-align: center; font-size: 22px;">
             {{ 'joinJourney' | translate }}
             <br><br>{{ 'learnMoreButton' | translate }}
-            <br><br><br>
-            <div class="flex-auto flex justify-center">
-                <a class="contact-button">
-                        {{ 'contactButton' | translate }}
-                    </a>
-            </div>
         </div>
+    </div>
+    <br><br><br>
+    <div class="element">
+        <div class="text flex justify-center mb-6">
+            <div class="title">{{ 'footer-button' | translate }}</div>
+        </div>
+        <app-form></app-form>
     </div>
 </div>

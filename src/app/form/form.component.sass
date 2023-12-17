@@ -1,0 +1,49 @@
+.contact-form-container
+    display: flex
+    justify-content: center
+    
+.contact-form
+    font-family: 'DM Serif Display', sans-serif
+    font-size: 20px
+    color: #FFFDFA
+    width: 75%
+
+.form-input
+    margin-bottom: 25px
+    width: 100%
+    padding: 10px
+    font-size: 18px
+    border: 2px solid #FFFDFA
+    border-radius: 0px
+    outline: none
+    color: #FFFDFA
+    background: transparent !important
+
+.contact-button
+    border: 2px solid #FFFDFA
+    padding: 2px 20px 3px 20px
+    font-size: 22px
+    color: #FFFDFA
+    display: inline-block
+    position: relative
+    transition: 0.3s ease-in-out all
+    cursor: pointer
+
+.contact-button:before
+    content: ''
+    background: #FFFDFA
+    position: absolute
+    width: 0%
+    top: 0
+    left: 0
+    height: 100%
+    transition: 0.3s ease-out all
+    z-index: -1
+
+.contact-button:hover:before
+    width: 100%
+
+.contact-button:hover
+    color: #010B13
+    font-weight: 900
+

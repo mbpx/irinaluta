@@ -1,13 +1,13 @@
 <div class="flex footer flex-nowrap">
     <div class="flex-none leading-2">
-        <p>© 2023 Irina Luta. All rights reserved.</p>
+        <p>© 2023 Irina Luta. {{ 'copyright' | translate }}</p>
         <p style="font-size: 12px;">Website by <a href="https://www.linkedin.com/in/miguel-bautista-perez/" target="_blank">Miguel Bautista</a></p>
     </div>
     <div class="flex-auto pl-20 flex justify-center">
         <p>{{ 'footer' | translate }}</p>
     </div>
     <div class="flex-auto flex justify-end mr-10">
-        <a class="contact-button">
+        <a class="contact-button" (click)="scroll('contacto')">
             {{ 'footer-button' | translate }}
         </a>
     </div>
