@@ -4,11 +4,11 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.sass']
+  selector: 'app-display3d',
+  templateUrl: './display3d.component.html',
+  styleUrls: ['./display3d.component.sass']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class Display3D implements OnInit, AfterViewInit {
 
   @ViewChild('canvas')
   private canvasRef: ElementRef<HTMLCanvasElement>;
@@ -42,8 +42,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   loadScene() {
     this.loadGLTF();
-    const background = new THREE.Color(0x010B13);
-    this.scene.background = background;
+    // const background = null;
+    // this.scene.background = background;
   }
 
   createScene() {
@@ -128,13 +128,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   mouseover() {
-    this.rotationSpeedY += 0.02;
-    this.camera.position.z -= 50; 
+    this.rotationSpeedY -= 0.02;
+    this.camera.position.z -= 20; 
   }
 
   mouseout() {
-    this.rotationSpeedY -= 0.02;
-    this.camera.position.z += 50; 
+    this.rotationSpeedY += 0.02;
+    this.camera.position.z += 20; 
   }
 
   private startRenderingLoop() {
@@ -146,8 +146,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.renderer.setPixelRatio(devicePixelRatio);
     this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
+    this.renderer.setClearColor( 0x000000, 0 );
 
-    const component: HomeComponent = this;
+    const component: Display3D = this;
 
     (function render() {
       requestAnimationFrame(render);
