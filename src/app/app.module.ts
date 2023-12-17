@@ -11,6 +11,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { I18nService } from './core/i18n.service';
+import { LanguageFlagsComponent } from './language-flags/language-flags.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -23,7 +24,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     Display3D,
     HeaderComponent,
     FooterComponent,
-    MainPageComponent
+    MainPageComponent,
+    LanguageFlagsComponent
   ],
   imports: [
     BrowserModule,

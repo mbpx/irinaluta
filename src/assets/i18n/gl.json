@@ -1,6 +1,6 @@
 {
     "title": "Dálle Vida ás túas Ideas",
-    "welcomeMessage": "Benvido á plataforma onde as túas ideas cobran vida no fascinante mundo do deseño 3D. Son Irina Luta, a túa deseñadora 3D, lista para transformar os teus conceptos en modelos reais e vibrantes. A miña paixón é entender as túas visións e traducilas en experiencias visuais cativadoras.",
+    "welcomeMessage": "Benvido á plataforma onde as túas ideas cobran vida no fascinante mundo do deseño 3D. \nSon Irina Luta, a túa deseñadora 3D, lista para transformar os teus conceptos en modelos reais e vibrantes. A miña paixón é entender as túas visións e traducilas en experiencias visuais cativadoras.",
     "dedicationAndApproachability": {
         "heading": "Dedicación e Proximidade",
         "content": "Neste viaxe creativa, non só obterás un deseño excepcional, senón que tamén experimentarás unha conexión única. Mérxome na túa mente, comprendo as túas necesidades á perfección e gozo destas conversas interminables que dan forma a ideas brillantes. Xuntos, crearemos deseños que reflexen autenticamente a túa visión."
@@ -15,5 +15,7 @@
     },
     "joinJourney": "Únete a min nesta viaxe creativa, onde as túas ideas se converten en realidade e cada proxecto se converte nunha expresión única da túa visión. Estou aquí para dar vida aos teus soños tridimensionais. ¿Preparado para embarcarte na próxima aventura de deseño?",
     "learnMoreButton": "Coñece máis sobre o meu traballo e descobre como podemos crear xuntos!",
-    "contactButton": "Contacta agora"
+    "contactButton": "Contacta agora",
+    "footer": "Tes unha idea na túa cabeza? ¡Podemos traballar xuntos!",
+    "footer-button": "Falemos!"
 }

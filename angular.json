@@ -30,7 +30,8 @@
                             "src/assets"
                         ],
                         "styles": [
-                            "src/styles.sass"
+                            "src/styles.sass",
+                            "node_modules/@textabledev/langs-flags-list/lang-flags.css"
                         ],
                         "scripts": []
                     },

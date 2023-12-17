@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
@@ -13,11 +13,16 @@ export class Display3D implements OnInit, AfterViewInit {
   @ViewChild('canvas')
   private canvasRef: ElementRef<HTMLCanvasElement>;
 
+  @Input('resource')
+  resourceName: string = '';
+  private resourceUrl: string = '';
+
   private rotationSpeedX = 0.0;
   private rotationSpeedY = 0.0;
   private size = 2;
   
-  private cameraZ = 125;
+  @Input('zoom')
+  cameraZ = 125;
   private fieldOfView = 1;
   private nearClippingPane = 20;
   private farClippingPane = 1000;
@@ -41,6 +46,7 @@ export class Display3D implements OnInit, AfterViewInit {
   }
 
   loadScene() {
+    this.resourceUrl = 'assets/models/' + this.resourceName + '/' + this.resourceName + '.gltf';
     this.loadGLTF();
     // const background = null;
     // this.scene.background = background;
@@ -85,7 +91,7 @@ export class Display3D implements OnInit, AfterViewInit {
   loadGLTF() {
     this.loader.load(
       // resource URL
-      'assets/models/giacca/giacca.gltf',
+      this.resourceUrl,
       // called when the resource is loaded
       (gltf) => {
 
@@ -129,12 +135,12 @@ export class Display3D implements OnInit, AfterViewInit {
 
   mouseover() {
     this.rotationSpeedY -= 0.02;
-    this.camera.position.z -= 20; 
+    this.camera.position.z -= this.cameraZ / 5; 
   }
 
   mouseout() {
     this.rotationSpeedY += 0.02;
-    this.camera.position.z += 20; 
+    this.camera.position.z += this.cameraZ / 5; 
   }
 
   private startRenderingLoop() {

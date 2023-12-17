@@ -20,6 +20,7 @@
     "@angular/router": "^17.0.7",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
+    "@textabledev/langs-flags-list": "^1.0.0",
     "@types/three": "^0.158.2",
     "rxjs": "~7.5.0",
     "three": "^0.158.0",
