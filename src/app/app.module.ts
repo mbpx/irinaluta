@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { Display3D } from './display3d/display3d.component';
+import { Display3Dv1 } from './display3d-v1/display3d-v1.component';
+import { Display3Dv2 } from './display3d-v2/display3d-v2.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { MainPageComponent } from './main-page/main-page.component';
+import { MainV1Component } from './main-v1/main-v1.component';
+import { MainV2Component } from './main-v2/main-v2.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -14,6 +16,7 @@ import { I18nService } from './core/i18n.service';
 import { LanguageFlagsComponent } from './language-flags/language-flags.component';
 import { FormComponent } from './form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InitComponent } from './init/init.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -23,12 +26,15 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    Display3D,
+    Display3Dv1,
+    Display3Dv2,
     HeaderComponent,
     FooterComponent,
-    MainPageComponent,
+    MainV1Component,
+    MainV2Component,
     LanguageFlagsComponent,
-    FormComponent
+    FormComponent,
+    InitComponent
   ],
   imports: [
     BrowserModule,

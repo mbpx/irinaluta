@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Display3D } from './display3d.component';
+import { MainV1Component } from './main-v1.component';
 
-describe('Display3D', () => {
-  let component: Display3D;
-  let fixture: ComponentFixture<Display3D>;
+describe('MainPageComponent', () => {
+  let component: MainV1Component;
+  let fixture: ComponentFixture<MainV1Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Display3D ]
+      declarations: [ MainV1Component ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Display3D);
+    fixture = TestBed.createComponent(MainV1Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

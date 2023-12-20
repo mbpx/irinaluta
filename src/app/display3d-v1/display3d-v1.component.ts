@@ -4,11 +4,11 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 
 @Component({
-  selector: 'app-display3d',
-  templateUrl: './display3d.component.html',
-  styleUrls: ['./display3d.component.sass']
+  selector: 'app-display3d-v1',
+  templateUrl: './display3d-v1.component.html',
+  styleUrls: ['./display3d-v1.component.sass']
 })
-export class Display3D implements OnInit, AfterViewInit {
+export class Display3Dv1 implements OnInit, AfterViewInit {
 
   @ViewChild('canvas')
   private canvasRef: ElementRef<HTMLCanvasElement>;
@@ -157,7 +157,7 @@ export class Display3D implements OnInit, AfterViewInit {
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     this.renderer.setClearColor( 0x000000, 0 );
 
-    const component: Display3D = this;
+    const component: Display3Dv1 = this;
 
     (function render() {
       requestAnimationFrame(render);
