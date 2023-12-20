@@ -1,6 +1,6 @@
 <div class="grid grid-rows-3 justify-center align-center main">
     <div class="element grid grid-cols-3">
-        <app-display3d-v2 resource="giacca"></app-display3d-v2>
+        <app-display3d resource="giacca"></app-display3d>
         <div class="col-span-2 text">
             <div class="title">{{ 'title' | translate }}</div>
             {{ 'welcomeMessage' | translate }}
@@ -11,10 +11,10 @@
             <div class="title">{{ 'dedicationAndApproachability.heading' | translate }}</div>
             {{ 'dedicationAndApproachability.content' | translate }}
         </div>
-        <app-display3d-v2 resource="cappellino" [zoom]="38"></app-display3d-v2>
+        <app-display3d resource="cappellino" [zoom]="38"></app-display3d>
     </div>
     <div class="element grid grid-cols-3">
-        <app-display3d-v2 resource="giacca" [zoom]="50" [rotation]="-0.9"></app-display3d-v2>
+        <app-display3d resource="giacca" [zoom]="50" [rotation]="-0.9"></app-display3d>
         <div class="col-span-2 text">
             <div class="title">{{ 'detailAndPerfection.heading' | translate }}</div>
             {{ 'detailAndPerfection.content' | translate }}
