@@ -1,0 +1,23 @@
+<!-- contact-form.component.html -->
+<div class="contact-form-container" id="contacto">
+    <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="submitForm()">
+        <div class="form-group">
+            <!-- <label for="name">Your Name:</label> -->
+            <input type="text" id="name" formControlName="name" class="form-input" placeholder="{{ 'contact.name' | translate }}">
+        </div>
+
+        <div class="form-group">
+            <!-- <label for="email">Your Email:</label> -->
+            <input type="email" id="email" formControlName="email" class="form-input" placeholder="{{ 'contact.email' | translate }}">
+        </div>
+
+        <div class="form-group">
+            <!-- <label for="message">Your Message:</label> -->
+            <textarea id="message" formControlName="message" class="form-input" placeholder="{{ 'contact.message' | translate }}"></textarea>
+        </div>
+
+        <div class="flex justify-center">
+            <button type="submit" class="contact-button">{{ 'contact.send' | translate }}</button>
+        </div>
+    </form>
+</div>

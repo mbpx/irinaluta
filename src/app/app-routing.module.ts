@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainV1Component } from './main-v1/main-v1.component';
 import { InitComponent } from './init/init.component';
-import { MainV2Component } from './main-v2/main-v2.component';
+
 
 const routes: Routes = [
   {
@@ -11,11 +10,11 @@ const routes: Routes = [
   },
   {
     path: 'v1',
-    component: MainV1Component
+    loadChildren: () => import('./v1/v1.module').then(m => m.V1Module)
   },
   {
-    path: 'v2',
-    component: MainV2Component
+    path: 'v0',
+    loadChildren: () => import('./v2/v2.module').then(m => m.V2Module)
   }
 ];
 
