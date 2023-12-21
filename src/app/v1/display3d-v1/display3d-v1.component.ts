@@ -30,6 +30,12 @@ export class Display3Dv1 implements OnInit, AfterViewInit {
   private nearClippingPane = 20;
   private farClippingPane = 1000;
 
+  @Input('height')
+  height = 300;
+
+  @Input('width')
+  width = 300;
+
   @Input('rotation')
   initialRotation = 0;
   private object!: THREE.Mesh;
